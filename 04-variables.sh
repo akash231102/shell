@@ -6,4 +6,4 @@ END_DATE=$(date +%M)
 
 executed_date=$(($START_DATE-$END_DATE))
 
-echo "executed time is $executed_time"
+echo "executed time is $executed_date"
