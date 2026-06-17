@@ -1,8 +1,8 @@
 #!/bin/bash
 
-START_DATE=$(date +%M)
+START_DATE=$(date +%s)
 sleep 10
-END_DATE=$(date +%M)
+END_DATE=$(date +%s)
 
 executed_date=$(($START_DATE-$END_DATE))
 
