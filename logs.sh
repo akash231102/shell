@@ -19,4 +19,11 @@ validate(){
     fi
 }
 
+dnf list installed mysql &>>$logfile
 
+if [ $? -ne 0 ]; then
+    dnf install mysql -y &>>logfile
+    validate $? "mysql"
+else
+    echo "mysql is already exist so skipping" | tee -a $logfile
+fi
