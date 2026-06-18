@@ -30,3 +30,12 @@ if [ $? -ne 0 ]; then
 else
     echo "mysql is already exist so skipping" | tee -a $logfile
 fi
+
+dnf list installed python3 &>>$logfile
+
+if [ $? -ne 0 ]; then
+    dnf install python3 -y $>>$logfile
+    validate $? "python3" | 
+else
+    echo "pyton slready exist so skipping" | tee -a $logfile
+fi
