@@ -27,7 +27,7 @@ dnf list installed mysql &>>$logfile
 if [ $? -ne 0 ]; then
     dnf install mysql -y &>>logfile
     validate $? "mysql"
-else
+elif
     echo "mysql is already exist so skipping" | tee -a $logfile
 fi
 
@@ -36,6 +36,6 @@ dnf list installed python3 &>>$logfile
 if [ $? -ne 0 ]; then
     dnf install python3 -y $>>$logfile
     validate $? "python3" | 
-else
+elif
     echo "pyton slready exist so skipping" | tee -a $logfile
 fi
