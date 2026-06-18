@@ -35,7 +35,7 @@ dnf list installed python3 &>>$logfile
 
 if [ $? -ne 0 ]; then
     dnf install python3 -y $>>$logfile
-    validate $? "python3" | 
+    validate $? "python3"
 else
     echo "pyton slready exist so skipping" | tee -a $logfile
 fi
