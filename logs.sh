@@ -6,6 +6,9 @@ log_folder=/var/log/shell-script
 script_name=$( echo "$0" | cut -d "." -f1 )
 logfile="$log_folder/$script_name.log"
 
+mkdir -p /var/log/shell-script
+echo "script started executed at: ($date)" | tee -a $logfile
+
 if [ $user_id -ne 0 ]; then
     echo "need root priviliges"
     exit 1;
